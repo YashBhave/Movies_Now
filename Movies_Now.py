@@ -8,7 +8,7 @@ Created on Fri Oct 22 09:19:03 2021
 import streamlit as st
 import pandas as pd
 import numpy as np
-import math
+#import math
 #from apyori import apriori
 
 
@@ -233,18 +233,18 @@ if len(InputCheck)>0:
             UserEpisodeTime= list(filter(None,UserEpisodeTime))
         
         #Checking total time spent by user watching episodes based on mapping (Hours and minutes)
-        TotalTimeSpent = 0
-        for i in UserEpisodeTime:
-            TotalTimeSpent = TotalTimeSpent + int(i)
-            Total_Hours= math.floor(TotalTimeSpent/60)
-            Total_Mins=TotalTimeSpent - (Total_Hours*60)
-            if Total_Mins<0:
-                Total_Mins=0
+        #TotalTimeSpent = 0
+        #for i in UserEpisodeTime:
+         #   TotalTimeSpent = TotalTimeSpent + int(i)
+          #  Total_Hours= math.floor(TotalTimeSpent/60)
+          #  Total_Mins=TotalTimeSpent - (Total_Hours*60)
+          #  if Total_Mins<0:
+           #     Total_Mins=0
         
         #Displayng run time to user he has spent
-        st.text("Series Watch Time - " + str(Total_Hours) + " Hours " + str(Total_Mins) + " Minutes")
-        TotalSeriesWatched = list(dict.fromkeys(UserSeriesData))
-        st.text("Total Series Watched- " +str(len(TotalSeriesWatched)))
+       # st.text("Series Watch Time - " + str(Total_Hours) + " Hours " + str(Total_Mins) + " Minutes")
+       # TotalSeriesWatched = list(dict.fromkeys(UserSeriesData))
+       # st.text("Total Series Watched- " +str(len(TotalSeriesWatched)))
         
         #Displaying count of series user has watched        
         SeriesWatched = np.where(UserSeriesMap['Username']==UserName,UserSeriesMap["Series Name"],None)
