@@ -9,7 +9,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import math
-from apyori import apriori
+#from apyori import apriori
 
 
 #HEADER OF THE PAGE
@@ -325,21 +325,21 @@ if len(InputCheck)>0:
             st.image(SeriesWatchedImage[i],width=200)
          
         #Machine learning Association apriori algorithm to check TV series bundle connections
-        user_data_new=user_data.drop(columns=["Username"])
-        recommended = [] 
-        temp=[]
-        for i in range(0,user_data_new.shape[0]): 
-            temp=[] 
-            for j in range(0,user_data_new.shape[1]): 
-                if str(user_data_new.values[i,j])!='0':
-                    temp.append(str(user_data_new.values[i,j])) 
-            recommended.append(temp)
+       # user_data_new=user_data.drop(columns=["Username"])
+        #recommended = [] 
+        #temp=[]
+        #for i in range(0,user_data_new.shape[0]): 
+         #   temp=[] 
+          #  for j in range(0,user_data_new.shape[1]): 
+           #     if str(user_data_new.values[i,j])!='0':
+            #        temp.append(str(user_data_new.values[i,j])) 
+            #recommended.append(temp)
         
-        association_rules = list(apriori(recommended,min_support=0.2, min_confidence=0.3))
+       # association_rules = list(apriori(recommended,min_support=0.2, min_confidence=0.3))
         
         #Saving the ML code as excel output
-        recommendations_outcomes = pd.DataFrame(association_rules)
-        recommendations_outcomes.to_excel("Watch_NOW recommendations.xlsx")
+        #recommendations_outcomes = pd.DataFrame(association_rules)
+        #recommendations_outcomes.to_excel("Watch_NOW recommendations.xlsx")
         
    
    
